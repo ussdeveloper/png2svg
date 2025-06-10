@@ -2,104 +2,104 @@
 echo Building png2svg.exe...
 echo.
 
-REM Sprawdz czy Python jest zainstalowany
+REM Check if Python is installed
 python --version >nul 2>&1
 if errorlevel 1 (
-    echo ERROR: Python nie jest zainstalowany lub nie jest w PATH
+    echo ERROR: Python is not installed or not in PATH
     pause
     exit /b 1
 )
 
-REM Sprawdz czy PyInstaller jest zainstalowany
+REM Check if PyInstaller is installed
 python -m PyInstaller --version >nul 2>&1
 if errorlevel 1 (
-    echo Instaluję PyInstaller...
+    echo Installing PyInstaller...
     python -m pip install PyInstaller
     if errorlevel 1 (
-        echo ERROR: Nie można zainstalować PyInstaller
+        echo ERROR: Cannot install PyInstaller
         pause
         exit /b 1
     )
 )
 
-REM Sprawdz czy opencv-python jest zainstalowany
+REM Check if opencv-python is installed
 python -c "import cv2" >nul 2>&1
 if errorlevel 1 (
-    echo Instaluję opencv-python...
+    echo Installing opencv-python...
     python -m pip install opencv-python
     if errorlevel 1 (
-        echo ERROR: Nie można zainstalować opencv-python
+        echo ERROR: Cannot install opencv-python
         pause
         exit /b 1
     )
 )
 
-REM Sprawdz czy svgwrite jest zainstalowany
+REM Check if svgwrite is installed
 python -c "import svgwrite" >nul 2>&1
 if errorlevel 1 (
-    echo Instaluję svgwrite...
+    echo Installing svgwrite...
     python -m pip install svgwrite
     if errorlevel 1 (
-        echo ERROR: Nie można zainstalować svgwrite
+        echo ERROR: Cannot install svgwrite
         pause
         exit /b 1
     )
 )
 
-REM Sprawdz czy numpy jest zainstalowany
+REM Check if numpy is installed
 python -c "import numpy" >nul 2>&1
 if errorlevel 1 (
-    echo Instaluję numpy...
+    echo Installing numpy...
     python -m pip install numpy
     if errorlevel 1 (
-        echo ERROR: Nie można zainstalować numpy
+        echo ERROR: Cannot install numpy
         pause
         exit /b 1
     )
 )
 
-echo Wszystkie zależności zainstalowane pomyślnie!
+echo All dependencies installed successfully!
 echo.
 
-REM Usun poprzednie build foldery
+REM Remove previous build folders
 if exist "build" (
-    echo Usuwam folder build...
+    echo Removing build folder...
     rmdir /s /q "build"
 )
 
 if exist "dist" (
-    echo Usuwam folder dist...
+    echo Removing dist folder...
     rmdir /s /q "dist"
 )
 
 if exist "png2svg.spec" (
-    echo Usuwam png2svg.spec...
+    echo Removing png2svg.spec...
     del "png2svg.spec"
 )
 
 echo.
-echo Budowanie exe...
+echo Building executable...
 python -m PyInstaller --onefile --strip --clean --name png2svg png2svg.py
 
 if errorlevel 1 (
     echo.
-    echo ERROR: Budowanie nie powiodło się!
+    echo ERROR: Build failed!
     pause
     exit /b 1
 )
 
 echo.
-echo SUCCESS: png2svg.exe zbudowany pomyślnie!
-echo Lokalizacja: %CD%\dist\png2svg.exe
+echo SUCCESS: png2svg.exe built successfully!
+echo Location: %CD%\dist\png2svg.exe
 echo.
 
-REM Test czy exe działa
-echo Testowanie exe...
+REM Test if exe works
+echo Testing executable...
 dist\png2svg.exe --help >nul 2>&1
 if errorlevel 1 (
-    echo WARNING: Exe może nie działać poprawnie
+    echo WARNING: Executable may not work correctly
 ) else (
-    echo Test pomyślny - exe działa!
+    echo Test successful - executable works!
 )
 
 echo.
