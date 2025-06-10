@@ -72,3 +72,23 @@ _debug*
 # Build scripts results
 *.exe
 *.msi
+
+# Development backup files
+*_old.*
+*_backup.*
+*_complete.*
+png2svg_*.py
+test_*.py
+test_*.svg
+
+# IDE and editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# PyInstaller generated files
+*.spec
+build/
+dist/
