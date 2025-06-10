@@ -24,7 +24,7 @@ png2svg.exe image.png                      # Pixel rectangles (default)
 
 ### Method 2: Python Script
 ```bash
-git clone https://github.com/yourusername/png2svg.git
+git clone https://github.com/ussdeveloper/png2svg.git
 cd png2svg
 pip install -r requirements.txt
 python png2svg.py image.png --smart
@@ -165,7 +165,7 @@ pip install opencv-python numpy svgwrite
 
 ### Build from Source
 ```bash
-git clone https://github.com/yourusername/png2svg.git
+git clone https://github.com/ussdeveloper/png2svg.git
 cd png2svg
 pip install -r requirements.txt
 
@@ -235,7 +235,7 @@ Size:   100% pixel accuracy, 8x scale factor
 
 ### Development Setup
 ```bash
-git clone https://github.com/yourusername/png2svg.git
+git clone https://github.com/ussdeveloper/png2svg.git
 cd png2svg
 python -m venv .venv
 source .venv/bin/activate  # Windows: .venv\Scripts\activate
@@ -249,9 +249,9 @@ MIT License - see [LICENSE](LICENSE) file for details.
 
 ## 🔗 Links
 
-- **Repository**: https://github.com/yourusername/png2svg
-- **Issues**: https://github.com/yourusername/png2svg/issues  
-- **Releases**: https://github.com/yourusername/png2svg/releases
+- **Repository**: https://github.com/ussdeveloper/png2svg
+- **Issues**: https://github.com/ussdeveloper/png2svg/issues  
+- **Releases**: https://github.com/ussdeveloper/png2svg/releases
 
 ## 🏆 Algorithm Comparison
 

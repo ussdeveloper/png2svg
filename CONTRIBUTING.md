@@ -13,20 +13,21 @@ Thank you for your interest in contributing to PNG2SVG! This document provides g
    cd png2svg
    ```
 
-2. **Set up development environment**
-   ```bash
-   # Create virtual environment
-   python -m venv .venv
-   
-   # Activate virtual environment
-   # Windows:
-   .venv\Scripts\activate
-   # Linux/macOS:
-   source .venv/bin/activate
-   
-   # Install dependencies
-   pip install -r requirements.txt
-   ```
+### Development Setup
+```bash
+git clone https://github.com/ussdeveloper/png2svg.git
+cd png2svg
+python -m venv .venv
+
+# Activate virtual environment
+# Windows:
+.venv\Scripts\activate
+# Linux/macOS:
+source .venv/bin/activate
+
+# Install dependencies
+pip install -r requirements.txt
+```
 
 3. **Test the installation**
    ```bash
